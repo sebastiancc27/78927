@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?><wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:ns="http://ws.apache.org/axis2" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:ns1="http://org.apache.axis2/xsd" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" targetNamespace="http://ws.apache.org/axis2">
+    <wsdl:types>
+        <xs:schema attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://ws.apache.org/axis2">
+            <xs:element name="raizNumero">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="args0" type="xs:int"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="raizNumeroResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="return" type="xs:double"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="potenciaNumero">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="args0" type="xs:int"/>
+                        <xs:element name="args1" type="xs:int"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="potenciaNumeroResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="return" type="xs:double"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="cuadradoNumero">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="args0" type="xs:int"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="cuadradoNumeroResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="return" type="xs:int"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+        </xs:schema>
+    </wsdl:types>
+    <wsdl:message name="potenciaNumeroRequest">
+        <wsdl:part name="parameters" element="ns:potenciaNumero"/>
+    </wsdl:message>
+    <wsdl:message name="potenciaNumeroResponse">
+        <wsdl:part name="parameters" element="ns:potenciaNumeroResponse"/>
+    </wsdl:message>
+    <wsdl:message name="cuadradoNumeroRequest">
+        <wsdl:part name="parameters" element="ns:cuadradoNumero"/>
+    </wsdl:message>
+    <wsdl:message name="cuadradoNumeroResponse">
+        <wsdl:part name="parameters" element="ns:cuadradoNumeroResponse"/>
+    </wsdl:message>
+    <wsdl:message name="raizNumeroRequest">
+        <wsdl:part name="parameters" element="ns:raizNumero"/>
+    </wsdl:message>
+    <wsdl:message name="raizNumeroResponse">
+        <wsdl:part name="parameters" element="ns:raizNumeroResponse"/>
+    </wsdl:message>
+    <wsdl:portType name="supercalculadoraPortType">
+        <wsdl:operation name="potenciaNumero">
+            <wsdl:input message="ns:potenciaNumeroRequest" wsaw:Action="urn:potenciaNumero"/>
+            <wsdl:output message="ns:potenciaNumeroResponse" wsaw:Action="urn:potenciaNumeroResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="cuadradoNumero">
+            <wsdl:input message="ns:cuadradoNumeroRequest" wsaw:Action="urn:cuadradoNumero"/>
+            <wsdl:output message="ns:cuadradoNumeroResponse" wsaw:Action="urn:cuadradoNumeroResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="raizNumero">
+            <wsdl:input message="ns:raizNumeroRequest" wsaw:Action="urn:raizNumero"/>
+            <wsdl:output message="ns:raizNumeroResponse" wsaw:Action="urn:raizNumeroResponse"/>
+        </wsdl:operation>
+    </wsdl:portType>
+    <wsdl:binding name="supercalculadoraSoap11Binding" type="ns:supercalculadoraPortType">
+        <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+        <wsdl:operation name="potenciaNumero">
+            <soap:operation soapAction="urn:potenciaNumero" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="cuadradoNumero">
+            <soap:operation soapAction="urn:cuadradoNumero" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="raizNumero">
+            <soap:operation soapAction="urn:raizNumero" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:binding name="supercalculadoraSoap12Binding" type="ns:supercalculadoraPortType">
+        <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+        <wsdl:operation name="potenciaNumero">
+            <soap12:operation soapAction="urn:potenciaNumero" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="cuadradoNumero">
+            <soap12:operation soapAction="urn:cuadradoNumero" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="raizNumero">
+            <soap12:operation soapAction="urn:raizNumero" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:binding name="supercalculadoraHttpBinding" type="ns:supercalculadoraPortType">
+        <http:binding verb="POST"/>
+        <wsdl:operation name="potenciaNumero">
+            <http:operation location="potenciaNumero"/>
+            <wsdl:input>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="cuadradoNumero">
+            <http:operation location="cuadradoNumero"/>
+            <wsdl:input>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="raizNumero">
+            <http:operation location="raizNumero"/>
+            <wsdl:input>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:service name="supercalculadora">
+        <wsdl:port name="supercalculadoraHttpSoap11Endpoint" binding="ns:supercalculadoraSoap11Binding">
+            <soap:address location="http://localhost:8080/axis2/services/supercalculadora"/>
+        </wsdl:port>
+        <wsdl:port name="supercalculadoraHttpSoap12Endpoint" binding="ns:supercalculadoraSoap12Binding">
+            <soap12:address location="http://localhost:8080/axis2/services/supercalculadora"/>
+        </wsdl:port>
+        <wsdl:port name="supercalculadoraHttpEndpoint" binding="ns:supercalculadoraHttpBinding">
+            <http:address location="http://localhost:8080/axis2/services/supercalculadora"/>
+        </wsdl:port>
+    </wsdl:service>
+</wsdl:definitions>

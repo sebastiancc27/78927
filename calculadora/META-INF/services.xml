@@ -1,0 +1,13 @@
+  <service name="supercalculadora">
+    <description>super calculadora</description>
+    <parameter name="ServiceClass">supercalculadora</parameter>
+    <operation name="raizNumero">
+        <messageReceiver class="org.apache.axis2.rpc.receivers.RPCMessageReceiver" />
+    </operation>
+    <operation name="potenciaNumero">
+        <messageReceiver class="org.apache.axis2.rpc.receivers.RPCMessageReceiver" />
+    </operation>
+        <operation name="cuadradoNumero">
+        <messageReceiver class="org.apache.axis2.rpc.receivers.RPCMessageReceiver" />
+    </operation>
+  </service>
