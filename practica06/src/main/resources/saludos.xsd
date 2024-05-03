@@ -1,0 +1,57 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="t4is.uv.mx/saludos"
+xmlns:tns="t4is.uv.mx/saludos" elementFormDefault="qualified">
+
+   <xs:element name="CelciusRequest">
+      <xs:complexType>
+         <xs:sequence>
+            <xs:element name="grados" type="xs:double"/>
+         </xs:sequence>
+      </xs:complexType>
+   </xs:element>
+
+   <xs:element name="CelciusResponse">
+      <xs:complexType>
+         <xs:sequence>
+            <xs:element name="grados" type="xs:double"/>
+         </xs:sequence>
+      </xs:complexType>
+   </xs:element>
+
+
+      <xs:element name="FahrenheitRequest">
+      <xs:complexType>
+         <xs:sequence>
+            <xs:element name="grados" type="xs:double"/>
+         </xs:sequence>
+      </xs:complexType>
+   </xs:element>
+
+   <xs:element name="FahrenheitResponse">
+      <xs:complexType>
+         <xs:sequence>
+            <xs:element name="grados" type="xs:double"/>
+         </xs:sequence>
+      </xs:complexType>
+   </xs:element>
+
+
+   <xs:element name="BuscarOperacionRequest"/>
+   
+   <xs:element name="BusacrOperacionResponse">
+      <xs:complexType>
+         <xs:sequence>
+            <xs:element name="operacion" maxOccurs="unbounded">
+               <xs:complexType>
+                  <xs:sequence>
+                     <xs:element name="id" type="xs:string"></xs:element>
+                     <xs:element name="res" type="xs:string"></xs:element>
+                     <xs:element name="operacion" type="xs:string"></xs:element>
+                  </xs:sequence>
+               </xs:complexType>
+            </xs:element>
+         </xs:sequence>
+      </xs:complexType>
+   </xs:element>
+
+</xs:schema> 
