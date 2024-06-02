@@ -1,0 +1,18 @@
+version: '3.3'
+services:
+  web_service:
+    environment:
+    - MYSQL_HOST=1.1.1.1
+    image: sebastiancc27/spring-boot
+    container_name: servicio_web
+    ports:
+    - 8080:8080
+    volumes:
+      - .\:/app    
+    working_dir: '/app'
+
+    command:
+    - java
+    - -jar
+    - practica08-0.0.1-SNAPSHOT.jar
+  
